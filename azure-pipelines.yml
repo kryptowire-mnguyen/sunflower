@@ -51,6 +51,12 @@ steps:
     filepath: '$(Build.SourcesDirectory)/app/build/outputs/apk/release/my-demo-app.release.apk'
     apikey: 'Yqsx9T83A5T1vENxaU4n5KGupOSNAOHnLl48'
     platform: 'android'
-    resultsDir: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/'
+    resultsDir: '$(Build.ArtifactStagingDirectory)/KryptowireResults'
     maxAnalysisTime: 75
     scoreThreshold: 50
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(build.artifactStagingDirectory)'
+    artifactName: 'KryptowireResults'
+    artifactType: 'container'

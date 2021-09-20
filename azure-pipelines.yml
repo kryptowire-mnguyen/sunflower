@@ -47,7 +47,7 @@ steps:
     artifactName: 'apks'
     publishLocation: 'container'
     
-- task: KryptowireMAST@2
+- task: KryptowireMAST@1
   continueOnError: true
   inputs:
     filepath: '$(Build.SourcesDirectory)/app/build/outputs/apk/release/demo.release.apk'
